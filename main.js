@@ -79,9 +79,9 @@ class Calculator {
     this.history.push(" = ");
     this.previous = "";
     this.history.push(this.displayNumbers(comp));
-    for (let element of this.history) {
-      this.historyText.innerText += element.toString();
-    }
+    this.history.forEach((ele) => {
+      this.historyText.innerText = ele.toString();
+    });
     this.history = [];
   }
 
@@ -89,7 +89,6 @@ class Calculator {
     this.currentText.innerText = this.displayNumbers(this.current);
     this.previousText.innerText = this.previous.toString();
   }
-  
 }
 let previousText = document.querySelector("[data-previous]");
 let currentText = document.querySelector("[data-current]");
