@@ -39,6 +39,9 @@ class Calculator {
   }
 
   getNumbers(numbers) {
+    if(numbers==="e"){
+      numbers = Math.E;
+    }
     if (isNaN(numbers.toString() === "." && this.current.includes("."))) return;
     this.current = this.current.toString() + numbers.toString();
   }
@@ -55,10 +58,17 @@ class Calculator {
     let comp;
     let curr = parseFloat(this.current);
     let prev = parseFloat(this.previous);
+    console.log(this.current);
+      console.log(Math.E);
+    if(this.current==="e"){
+      curr = Math.E;
+    }else if(this.previous==="e"){
+      prev = Math.E;
+    }
     this.historyText.innerText = "";
     this.history = [this.previous];
     this.history.push(this.current);
-
+    console.log(curr);
     if (isNaN(curr) || isNaN(prev)) return;
     switch (this.operation) {
       case "+":
@@ -73,6 +83,10 @@ class Calculator {
       case "÷":
         comp = prev / curr;
         break;
+      case "^":
+        comp = Math.pow(prev,curr);
+        break;
+      
     }
     this.current = comp;
     this.operation = undefined;

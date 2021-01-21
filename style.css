@@ -16,7 +16,7 @@
     justify-content: center;
     align-content: center;
     min-height: 100vh;
-    grid-template-columns: repeat(4, 100px);
+    grid-template-columns: repeat(5, 100px);
     grid-template-rows: minmax(120px, auto) repeat(5, 100px);
   }
   
@@ -36,6 +36,10 @@
   
   .span-two {
     grid-column: span 2;
+    background-color: rgba(248, 78, 11, 0.603);
+  }
+  .span-five{
+    grid-column: span 5 ;
     background-color: rgba(248, 78, 11, 0.603);
   }
 
